@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Aqualattice Irrigation</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c8a6d;
+            --secondary-color: #3aa78a;
+            --accent-color: #f5a623;
+            --dark-color: #1a3a2f;
+            --light-color: #f5f7f6;
+            --text-color: #333;
+            --text-light: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('p2.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Privacy Policy Content */
+        .privacy-content {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .privacy-content h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 30px 0 15px;
+        }
+        
+        .privacy-content h3 {
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            margin: 25px 0 10px;
+        }
+        
+        .privacy-content p {
+            margin-bottom: 15px;
+        }
+        
+        .privacy-content ul {
+            margin: 20px 0 20px 40px;
+        }
+        
+        .privacy-content li {
+            margin-bottom: 15px;
+        }
+        
+        .point-title {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                padding: 10px 20px;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="p1.png" alt="Aqualattice Irrigation Logo">
+                <div class="logo-text">
+                    <h1>Aqualattice Irrigation</h1>
+                    <p>The framework of growth</p>
+                </div>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="nav-menu">
+                   <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Privacy Policy</h2>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content -->
+    <section class="privacy-content">
+        <div class="container">
+            <h2>Privacy Policy for Aqualattice Irrigation</h2>
+            <p>Last Updated: June 28, 2023</p>
+            
+            <p>At Aqualattice Irrigation, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website aqualattice.com or use our services.</p>
+            
+            <h3>1. Information We Collect</h3>
+            <p><span class="point-title">Personal Identification Information:</span> We may collect personal information such as your name, email address, phone number, and mailing address when you register on our site, place an order, subscribe to our newsletter, or fill out a form. This information is used to provide our services, process transactions, and communicate with you.</p>
+            
+            <p><span class="point-title">Non-Personal Identification Information:</span> We collect non-personal information about your interaction with our website, including browser type, operating system, IP address, and pages visited. This helps us improve our website and services by analyzing usage patterns and trends.</p>
+            
+            <p><span class="point-title">Payment Information:</span> When you make purchases, we collect payment details such as credit card numbers, billing addresses, and transaction histories. This information is processed securely through our payment processors and is not stored on our servers beyond what is necessary to complete the transaction.</p>
+            
+            <p><span class="point-title">Cookies and Tracking Technologies:</span> Our website uses cookies and similar tracking technologies to enhance user experience, analyze trends, and gather demographic information. You can control cookie preferences through your browser settings.</p>
+            
+            <h3>2. How We Use Your Information</h3>
+            <p><span class="point-title">Service Provision:</span> We use your personal information to provide and maintain our services, process transactions, and fulfill orders. This includes delivering products, providing customer support, and sending service-related communications.</p>
+            
+            <p><span class="point-title">Communication:</span> Your information allows us to respond to inquiries, send newsletters, and provide updates about our products and services. You can opt-out of marketing communications at any time.</p>
+            
+            <p><span class="point-title">Improvement:</span> We analyze user behavior to improve our website, products, and services. This includes troubleshooting, data analysis, testing, and research to enhance user experience and functionality.</p>
+            
+            <p><span class="point-title">Security:</span> Your information helps us monitor and prevent fraudulent transactions, unauthorized access, and other illegal activities. We implement appropriate security measures to protect your data.</p>
+            
+            <p><span class="point-title">Legal Compliance:</span> We may use your information to comply with applicable laws, regulations, legal processes, or governmental requests, as well as to enforce our terms of service and protect our rights.</p>
+            
+            <h3>3. Information Sharing and Disclosure</h3>
+            <p><span class="point-title">Service Providers:</span> We may share information with trusted third-party vendors who assist us in operating our website, conducting business, or servicing you, as long as they agree to keep this information confidential.</p>
+            
+            <p><span class="point-title">Business Transfers:</span> In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of the transaction. We will notify you of any such change in ownership or control.</p>
+            
+            <p><span class="point-title">Legal Requirements:</span> We may disclose your information when required by law or in response to valid requests by public authorities, such as to comply with a subpoena or similar legal process.</p>
+            
+            <p><span class="point-title">Protection of Rights:</span> We may share information when we believe disclosure is necessary to protect our rights, your safety, or the safety of others, investigate fraud, or respond to a government request.</p>
+            
+            <h3>4. Data Security</h3>
+            <p><span class="point-title">Security Measures:</span> We implement appropriate technical and organizational measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information. This includes encryption, firewalls, and secure socket layer technology.</p>
+            
+            <p><span class="point-title">Data Retention:</span> We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law.</p>
+            
+            <p><span class="point-title">Breach Notification:</span> In the event of a data breach that affects your personal information, we will notify you and the appropriate authorities as required by applicable laws and regulations.</p>
+            
+            <h3>5. Your Rights and Choices</h3>
+            <p><span class="point-title">Access and Correction:</span> You have the right to access, update, or correct your personal information. You can do this by logging into your account or contacting us directly.</p>
+            
+            <p><span class="point-title">Data Portability:</span> You may request a copy of your personal data in a structured, commonly used, and machine-readable format.</p>
+            
+            <p><span class="point-title">Deletion:</span> You can request deletion of your personal information, subject to certain legal obligations we may have to retain some data.</p>
+            
+            <p><span class="point-title">Opt-Out:</span> You may opt-out of receiving marketing communications from us by following the unsubscribe instructions included in these communications or by contacting us.</p>
+            
+            <p><span class="point-title">Cookies:</span> Most web browsers are set to accept cookies by default. You can usually modify your browser settings to decline cookies, but this may affect certain features of our website.</p>
+            
+            <h3>6. International Data Transfers</h3>
+            <p><span class="point-title">Cross-Border Transfers:</span> Your information may be transferred to and maintained on computers located outside of your state, province, country, or other governmental jurisdiction where data protection laws may differ.</p>
+            
+            <p><span class="point-title">Safeguards:</span> When we transfer personal information internationally, we implement appropriate safeguards such as standard contractual clauses to ensure your data remains protected.</p>
+            
+            <h3>7. Children's Privacy</h3>
+            <p><span class="point-title">Age Restrictions:</span> Our services are not directed to individuals under 16. We do not knowingly collect personal information from children under 16. If we become aware that we have collected such information, we will take steps to delete it.</p>
+            
+            <h3>8. Third-Party Links</h3>
+            <p><span class="point-title">External Sites:</span> Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review their privacy policies.</p>
+            
+            <h3>9. Changes to This Policy</h3>
+            <p><span class="point-title">Updates:</span> We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. We will notify you of significant changes by posting the new policy on our website with an updated effective date.</p>
+            
+            <p><span class="point-title">Continued Use:</span> Your continued use of our services after any changes to this policy constitutes acceptance of the updated terms.</p>
+            
+            <h3>10. Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+            <p>Aqualattice Irrigation<br>
+            400 Broome St, New York, NY 10013, USA<br>
+            Phone: (212) 555-1234<br>
+            Email: privacy@aqualattice.com</p>
+            
+            <h3>Additional Privacy Disclosures</h3>
+            
+            <p><span class="point-title">11. Automated Decision Making:</span> We do not use fully automated decision-making processes that have legal or similarly significant effects on individuals. Any automated processing is subject to human review.</p>
+            
+            <p><span class="point-title">12. Do Not Track Signals:</span> Our website does not currently respond to Do Not Track (DNT) browser signals. We await the development of industry standards for how to interpret these signals.</p>
+            
+            <p><span class="point-title">13. California Privacy Rights:</span> California residents have specific rights under the CCPA, including the right to request disclosure of data collection practices and the right to opt-out of the sale of personal information.</p>
+            
+            <p><span class="point-title">14. GDPR Compliance:</span> For users in the European Economic Area, we comply with the General Data Protection Regulation (GDPR), providing additional rights and protections for your personal data.</p>
+            
+            <p><span class="point-title">15. Data Processing Agreements:</span> When we engage third-party processors, we enter into data processing agreements that require them to protect your information consistent with this policy.</p>
+            
+            <p><span class="point-title">16. Anonymized Data:</span> We may create anonymized or aggregated data from personal information, which we use for various purposes including analytics and product improvement.</p>
+            
+            <p><span class="point-title">17. Social Media Integration:</span> Our website may include social media features that may collect your IP address and set cookies. Your interactions with these features are governed by the privacy policy of the company providing them.</p>
+            
+            <p><span class="point-title">18. Public Forums:</span> Any information you disclose in public areas of our website becomes public information. Exercise caution when deciding to share personal information in these areas.</p>
+            
+            <p><span class="point-title">19. Surveys and Contests:</span> Participation in surveys or contests is voluntary. Contact information collected may be used to notify winners and award prizes, and may be published as required by law.</p>
+            
+            <p><span class="point-title">20. Testimonials:</span> With your consent, we may display personal testimonials on our website. If you wish to update or delete your testimonial, you can contact us.</p>
+            
+            <p><span class="point-title">21. Blog Comments:</span> Our website may offer publicly accessible blogs. Any information you provide in comments may be read, collected, and used by others who access them.</p>
+            
+            <p><span class="point-title">22. Referral Programs:</span> If you participate in our referral service, we will ask for your contact's information. We will only contact them with your permission.</p>
+            
+            <p><span class="point-title">23. Single Sign-On:</span> You may log in to our service using sign-in services like Google or Facebook. These services will authenticate your identity and may share certain personal information with us.</p>
+            
+            <p><span class="point-title">24. Location Data:</span> With your permission, we may collect and process information about your actual location to provide location-based services.</p>
+            
+            <p><span class="point-title">25. Mobile Applications:</span> If you use our mobile applications, we may collect additional information such as device identifiers and mobile network information.</p>
+            
+            <p><span class="point-title">26. Behavioral Advertising:</span> We may partner with third-party ad networks to display advertising on our website or to manage our advertising on other sites. These networks may use tracking technologies to collect information about your activities.</p>
+            
+            <p><span class="point-title">27. Affiliate Programs:</span> We may participate in affiliate marketing and may allow affiliate links to be encoded on some of our pages. This means we may earn a commission if you click on or make purchases via affiliate links.</p>
+            
+            <p><span class="point-title">28. Email Tracking:</span> Our emails may contain web beacons to track whether emails are opened and which links are clicked. This helps us measure the effectiveness of our communications.</p>
+            
+            <p><span class="point-title">29. User-Generated Content:</span> Any content you post on our platform may be viewed by other users and may be publicly distributed outside the site in perpetuity.</p>
+            
+            <p><span class="point-title">30. Data Accuracy:</span> We take reasonable steps to ensure that personal information we process is accurate, complete, and current, but we depend on our users to update or correct their personal information when necessary.</p>
+            
+            <p><span class="point-title">31. Data Minimization:</span> We collect only the personal information that is necessary for the purposes for which it is to be used, and we take reasonable steps to ensure that personal information is reliable for its intended use.</p>
+            
+            <p><span class="point-title">32. Vendor Assessments:</span> We conduct assessments of our vendors' data protection practices to ensure they provide a level of protection consistent with this Privacy Policy.</p>
+            
+            <p><span class="point-title">33. Data Protection Officer:</span> We have appointed a Data Protection Officer who oversees compliance with this Privacy Policy. You may contact them at dpo@aqualattice.com.</p>
+            
+            <p><span class="point-title">34. Record Keeping:</span> We maintain records of our processing activities containing the information required under applicable privacy laws.</p>
+            
+            <p><span class="point-title">35. Privacy by Design:</span> We implement appropriate technical and organizational measures in an effective way to ensure compliance with data protection principles.</p>
+            
+            <p><span class="point-title">36. Data Subject Rights Procedure:</span> We have established procedures for addressing data subject rights requests within the timeframes required by applicable law.</p>
+            
+            <p><span class="point-title">37. Data Protection Impact Assessments:</span> For high-risk processing activities, we conduct assessments to identify and minimize data protection risks.</p>
+            
+            <p><span class="point-title">38. Employee Training:</span> We provide regular privacy and security training to employees who handle personal information.</p>
+            
+            <p><span class="point-title">39. Incident Response Plan:</span> We maintain an incident response plan to address potential data breaches, including procedures for investigation, mitigation, and notification.</p>
+            
+            <p><span class="point-title">40. Periodic Reviews:</span> We conduct periodic internal reviews of our data processing activities to ensure compliance with this Privacy Policy and applicable laws.</p>
+            
+            <p>This comprehensive Privacy Policy demonstrates our commitment to protecting your personal information and being transparent about our data practices. We encourage you to review this policy periodically to stay informed about how we are protecting your information.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Aqualattice Irrigation</h3>
+                    <p>The framework of growth for urban gardens, vertical farms, and commercial green spaces.</p>
+                    <p>400 Broome St, New York, NY 10013, USA</p>
+                    <p>Phone: (212) 555-1234</p>
+                    <p>Email: info@aqualattice.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">System Design</a></li>
+                        <li><a href="#">Installation</a></li>
+                        <li><a href="#">Automation</a></li>
+                        <li><a href="#">Maintenance</a></li>
+                        <li><a href="#">Training</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                        <li><a href="#">CCPA Notice</a></li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Aqualattice Irrigation. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Aqualattice Irrigation</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c8a6d;
+            --secondary-color: #3aa78a;
+            --accent-color: #f5a623;
+            --dark-color: #1a3a2f;
+            --light-color: #f5f7f6;
+            --text-color: #333;
+            --text-light: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('p2.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Contact Form Section */
+        .contact-form-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .form-container {
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-container h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e6951a;
+        }
+        
+        .contact-info {
+            padding: 20px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        /* Contact Content */
+        .contact-content {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-content h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 30px 0 15px;
+        }
+        
+        .contact-content h3 {
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            margin: 25px 0 10px;
+        }
+        
+        .contact-content p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-content ul {
+            margin: 20px 0 20px 40px;
+        }
+        
+        .contact-content li {
+            margin-bottom: 15px;
+        }
+        
+        .point-title {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 0 0 80px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: var(--light-color);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question h4 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+        
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        
+        .faq-answer-inner {
+            padding: 20px;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 20px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .footer-social-links a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                padding: 10px 20px;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="p1.png" alt="Aqualattice Irrigation Logo">
+                <div class="logo-text">
+                    <h1>Aqualattice Irrigation</h1>
+                    <p>The framework of growth</p>
+                </div>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="nav-menu">
+                      <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Contact Aqualattice Irrigation</h2>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container contact-container">
+            <div class="form-container">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="sales">Sales Questions</option>
+                            <option value="support">Technical Support</option>
+                            <option value="installation">Installation Services</option>
+                            <option value="maintenance">Maintenance Services</option>
+                            <option value="feedback">Feedback/Suggestions</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Our Headquarters</h4>
+                            <p>400 Broome St, New York, NY 10013, USA</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>(212) 555-1234</p>
+                            <p>Mon-Fri: 9am-6pm EST</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>info@aqualattice.com</p>
+                            <p>support@aqualattice.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content Section -->
+    <section class="contact-content">
+        <div class="container">
+            <h2>Comprehensive Contact Information</h2>
+            <p>At Aqualattice Irrigation, we're committed to providing multiple channels for you to reach our team. Below you'll find detailed information about all the ways you can connect with us for sales, support, and general inquiries.</p>
+            
+            <h3>1. General Contact Information</h3>
+            <p><span class="point-title">Main Office:</span> Our headquarters is located at 400 Broome St, New York, NY 10013, USA. This location houses our administrative staff, customer service team, and design specialists. Visitors are welcome by appointment Monday through Friday from 9am to 5pm EST.</p>
+            
+            <p><span class="point-title">Phone Support:</span> Our main phone line (212) 555-1234 is answered during business hours (9am-6pm EST). After hours, you may leave a voicemail which will be returned the next business day. For faster service, have your customer ID or order number ready when calling.</p>
+            
+            <p><span class="point-title">Email Communications:</span> For general inquiries, email info@aqualattice.com. Technical support requests should be sent to support@aqualattice.com. We strive to respond to all emails within 24 business hours, with most responses sent within 4-6 hours during business days.</p>
+            
+            <p><span class="point-title">Emergency Contacts:</span> For urgent irrigation system issues outside business hours, call our emergency line at (212) 555-5678. This line is monitored 24/7 for critical system failures that require immediate attention to prevent property damage or significant water loss.</p>
+            
+            <h3>2. Department-Specific Contacts</h3>
+            <p><span class="point-title">Sales Department:</span> Contact our sales team at sales@aqualattice.com or (212) 555-2345 for product inquiries, quotes, and purchasing information. Our sales representatives are available Monday-Friday 8am-6pm EST to discuss your irrigation needs.</p>
+            
+            <p><span class="point-title">Technical Support:</span> For assistance with existing systems, email support@aqualattice.com or call (212) 555-3456. Support hours are Monday-Friday 8am-8pm EST and Saturday 9am-5pm EST. Include your system ID and a detailed description of your issue for faster resolution.</p>
+            
+            <p><span class="point-title">Installation Services:</span> Schedule installation consultations at install@aqualattice.com or (212) 555-4567. Our installation coordinators will arrange site visits and provide detailed proposals for your irrigation system setup.</p>
+            
+            <p><span class="point-title">Billing Department:</span> For invoices, payments, and account questions, contact billing@aqualattice.com or (212) 555-6789. The billing team is available Monday-Friday 9am-5pm EST to assist with payment processing and account management.</p>
+            
+            <h3>3. Regional Offices</h3>
+            <p><span class="point-title">Northeast Region:</span> Serving New York, New Jersey, and Connecticut from our Newark office at 123 Market St, Newark, NJ 07102. Contact northeast@aqualattice.com or (973) 555-1234 for local inquiries and service requests.</p>
+            
+            <p><span class="point-title">Southeast Region:</span> Our Miami office at 456 Ocean Dr, Miami, FL 33139 handles Florida, Georgia, and the Carolinas. Reach the team at southeast@aqualattice.com or (305) 555-2345 for regional support.</p>
+            
+            <p><span class="point-title">Midwest Region:</span> Based in Chicago at 789 Lake St, Chicago, IL 60601, this office serves Illinois, Indiana, Michigan, and surrounding states. Contact midwest@aqualattice.com or (312) 555-3456 for local assistance.</p>
+            
+            <p><span class="point-title">West Coast Region:</span> Our Los Angeles office at 321 Sunset Blvd, Los Angeles, CA 90028 covers California, Arizona, and Nevada. Email west@aqualattice.com or call (213) 555-4567 for regional services.</p>
+            
+            <h3>4. International Contacts</h3>
+            <p><span class="point-title">Canada:</span> Our Toronto office serves all Canadian provinces. Contact canada@aqualattice.com or +1 (416) 555-1234 for information about our services in Canada.</p>
+            
+            <p><span class="point-title">Europe:</span> For European inquiries, contact our London office at europe@aqualattice.com or +44 20 5555 1234. We serve the UK, France, Germany, and neighboring countries with specialized support.</p>
+            
+            <p><span class="point-title">Asia-Pacific:</span> Our Singapore office handles Asia-Pacific region inquiries at asia@aqualattice.com or +65 6555 1234. We provide support for urban farming projects throughout Southeast Asia and Australia.</p>
+            
+            <h3>5. Specialized Support Channels</h3>
+            <p><span class="point-title">Commercial Projects:</span> Large-scale agricultural and commercial clients should contact commercial@aqualattice.com or (212) 555-7890 for dedicated account management and customized solutions.</p>
+            
+            <p><span class="point-title">Government Contracts:</span> Municipalities and government agencies can reach our public sector team at government@aqualattice.com or (212) 555-8901 for specialized irrigation solutions for public spaces.</p>
+            
+            <p><span class="point-title">Architects & Designers:</span> Professionals in architecture and landscape design can access technical resources and consultation at design@aqualattice.com or (212) 555-9012 for integration of our systems into their projects.</p>
+            
+            <p><span class="point-title">Research Partnerships:</span> Universities and research institutions interested in collaborating should contact research@aqualattice.com or (212) 555-0123 to discuss joint projects and technology development.</p>
+            
+            <h3>6. Additional Contact Methods</h3>
+            <p><span class="point-title">Live Chat:</span> Our website features live chat support available Monday-Friday 9am-6pm EST. Look for the chat icon in the bottom right corner of your screen for immediate assistance with general questions.</p>
+            
+            <p><span class="point-title">Web Form:</span> In addition to the contact form above, specialized forms are available for technical support requests, quote requests, and installation inquiries through our website's Contact section.</p>
+            
+            <p><span class="point-title">Social Media:</span> We maintain active profiles on Facebook, Twitter, Instagram, and LinkedIn. While these aren't ideal for support issues, they're great for general questions and staying updated on our latest products.</p>
+            
+            <p><span class="point-title">Mail Correspondence:</span> While electronic communication is preferred, you may send written correspondence to: Aqualattice Irrigation, 400 Broome St, New York, NY 10013, USA. Please allow 7-10 business days for a response to mailed inquiries.</p>
+            
+            <h3>7. Visiting Our Facilities</h3>
+            <p><span class="point-title">Showroom Appointments:</span> Our New York showroom displays working models of our irrigation systems. Schedule a visit at showroom@aqualattice.com or (212) 555-1234 ext. 100 to see our technology in action.</p>
+            
+            <p><span class="point-title">Factory Tours:</span> We offer monthly tours of our manufacturing facility in New Jersey. Register at tours@aqualattice.com to see how our irrigation systems are designed and produced.</p>
+            
+            <p><span class="point-title">Demonstration Gardens:</span> Visit our demonstration gardens at 200 Greenway Ave, Brooklyn, NY 11222 to see our systems operating in various urban farming configurations. Open Tuesday-Saturday 10am-4pm.</p>
+            
+            <h3>8. Technical Support Resources</h3>
+            <p><span class="point-title">Knowledge Base:</span> Our online knowledge base at support.aqualattice.com contains hundreds of articles, troubleshooting guides, and how-to videos for common issues and maintenance tasks.</p>
+            
+            <p><span class="point-title">Video Tutorials:</span> Access our library of instructional videos at videos.aqualattice.com covering installation, programming, maintenance, and seasonal preparation for all our systems.</p>
+            
+            <p><span class="point-title">Webinars:</span> We host monthly webinars on irrigation best practices, new product features, and advanced system configurations. Register at webinars.aqualattice.com to participate live or view recordings.</p>
+            
+            <p><span class="point-title">User Manuals:</span> Download complete user manuals and technical specifications for all our products at manuals.aqualattice.com. Available in multiple languages for international customers.</p>
+            
+            <h3>9. Feedback and Complaints</h3>
+            <p><span class="point-title">Customer Satisfaction:</span> We value your feedback. Share your experience at feedback@aqualattice.com or complete our customer satisfaction survey sent after each service interaction.</p>
+            
+            <p><span class="point-title">Complaint Resolution:</span> For formal complaints, email complaints@aqualattice.com or call (212) 555-1234 ext. 500. We acknowledge all complaints within 24 hours and work to resolve them within 5 business days.</p>
+            
+            <p><span class="point-title">Executive Escalation:</span> If your concern hasn't been resolved through standard channels, you may contact our executive team at executives@aqualattice.com for further review and resolution.</p>
+            
+            <h3>10. Business Development Contacts</h3>
+            <p><span class="point-title">Distributor Inquiries:</span> Companies interested in distributing our products should contact distribution@aqualattice.com or (212) 555-1234 ext. 600 for information about our partner programs.</p>
+            
+            <p><span class="point-title">Reseller Programs:</span> Retailers and online sellers can learn about our reseller opportunities at reseller@aqualattice.com or (212) 555-1234 ext. 610 for wholesale pricing and support.</p>
+            
+            <p><span class="point-title">OEM Partnerships:</span> Manufacturers interested in integrating our technology into their products should contact oem@aqualattice.com or (212) 555-1234 ext. 620 to discuss collaboration opportunities.</p>
+            
+            <p><span class="point-title">Investor Relations:</span> For investment inquiries and financial information, contact our investor relations team at investors@aqualattice.com or (212) 555-1234 ext. 700.</p>
+            
+            <h3>11. Media and Press Contacts</h3>
+            <p><span class="point-title">Press Inquiries:</span> Members of the media should direct inquiries to press@aqualattice.com or (212) 555-1234 ext. 800. Our PR team can provide company information, executive bios, and high-resolution images.</p>
+            
+            <p><span class="point-title">Interview Requests:</span> To request interviews with our executives or technical experts, email interviews@aqualattice.com with details about your publication and topics of interest.</p>
+            
+            <p><span class="point-title">Event Sponsorships:</span> For information about sponsoring agricultural technology events or trade shows, contact sponsorships@aqualattice.com or (212) 555-1234 ext. 820.</p>
+            
+            <p><span class="point-title">Speaking Engagements:</span> To invite our experts to speak at your event, email speaking@aqualattice.com with event details, audience information, and suggested topics.</p>
+            
+            <h3>12. Career Opportunities</h3>
+            <p><span class="point-title">Employment Inquiries:</span> View current job openings and submit applications at careers.aqualattice.com. For questions about employment opportunities, email hr@aqualattice.com.</p>
+            
+            <p><span class="point-title">Internship Programs:</span> Our seasonal internship programs provide hands-on experience in irrigation technology. Apply at internships@aqualattice.com or (212) 555-1234 ext. 900.</p>
+            
+            <p><span class="point-title">University Recruiting:</span> Campus recruiters can schedule visits and information sessions by emailing campus@aqualattice.com or calling (212) 555-1234 ext. 910.</p>
+            
+            <h3>13. Supplier and Vendor Contacts</h3>
+            <p><span class="point-title">Procurement:</span> Companies interested in supplying components or services to Aqualattice should contact procurement@aqualattice.com or (212) 555-1234 ext. 950 for vendor qualification information.</p>
+            
+            <p><span class="point-title">RFQ Process:</span> Technical specifications and request for quote procedures are available at suppliers.aqualattice.com. Register as a potential supplier to receive notifications of bidding opportunities.</p>
+            
+            <h3>14. Community Relations</h3>
+            <p><span class="point-title">Educational Programs:</span> Schools and educational organizations can request materials and presentations about water conservation technology at education@aqualattice.com.</p>
+            
+            <p><span class="point-title">Community Gardens:</span> We support urban agriculture initiatives through our community garden program. Apply for assistance at gardens@aqualattice.com.</p>
+            
+            <p><span class="point-title">Sustainability Partnerships:</span> Organizations focused on water conservation and sustainable agriculture can explore collaboration opportunities at sustainability@aqualattice.com.</p>
+            
+            <h3>15. Additional Information</h3>
+            <p><span class="point-title">Accessibility Services:</span> For accommodation requests or accessibility concerns, contact accessibility@aqualattice.com or (212) 555-1234 ext. 990. We're committed to making our services available to all customers.</p>
+            
+            <p><span class="point-title">Language Services:</span> Interpretation services are available for non-English speakers. Indicate your language needs when contacting us, and we'll arrange appropriate support.</p>
+            
+            <p><span class="point-title">Whistleblower Reports:</span> To report concerns about legal or ethical violations anonymously, use our secure reporting system at report.aqualattice.com or call our ethics hotline at (800) 555-7890.</p>
+            
+            <p><span class="point-title">Legal Department:</span> Service of legal process should be directed to legal@aqualattice.com or our registered agent at 400 Broome St, New York, NY 10013, USA.</p>
+            
+            <p>We appreciate your interest in Aqualattice Irrigation and look forward to assisting you with all your irrigation needs. Our team is dedicated to providing exceptional service and support through every channel of communication.</p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.215318006922!2d-74.002637924533!3d40.72148997139248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598a9a1e8247%3A0x3b8e9a6315a3a8e6!2s400%20Broome%20St%2C%20New%20York%2C%20NY%2010013%2C%20USA!5e0!3m2!1sen!2sin!4v1687956789434!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What are your customer service hours?</h4>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Our main customer service team is available Monday through Friday from 9am to 6pm EST. Technical support has extended hours Monday-Friday 8am-8pm EST and Saturday 9am-5pm EST. Emergency support is available 24/7 for critical system failures that could lead to property damage or significant water loss.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How quickly can I expect a response to my email inquiry?</h4>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>We strive to respond to all email inquiries within 24 business hours. Most emails received during business hours receive a response within 4-6 hours. Technical support emails typically receive a response within 2 business hours during support hours. For urgent matters, we recommend calling our support line for immediate assistance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do you offer on-site consultations?</h4>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Yes, we offer complimentary on-site consultations for projects within our service areas. Our design specialists will visit your location to assess your space, discuss your needs, and provide recommendations. Consultations typically last 60-90 minutes and include a follow-up proposal. Appointments can be scheduled through our installation department at (212) 555-4567 or install@aqualattice.com.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What information should I have ready when contacting support?</h4>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>For fastest service, please have your system ID (found on your installation paperwork or equipment), a description of the issue including when it started, any error messages displayed, and steps you've already tried to resolve the problem. Photos or videos of the issue can be extremely helpful for our technicians to diagnose problems remotely.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How do I schedule maintenance services?</h4>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Maintenance services can be scheduled by calling (212) 555-1234 or emailing maintenance@aqualattice.com. We recommend seasonal maintenance visits in spring (system startup) and fall (winterization). Customers with maintenance contracts receive priority scheduling and discounted rates. Our online portal also allows you to view available appointments and schedule service directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Aqualattice Irrigation</h3>
+                    <p>The framework of growth for urban gardens, vertical farms, and commercial green spaces.</p>
+                    <p>400 Broome St, New York, NY 10013, USA</p>
+                    <p>Phone: (212) 555-1234</p>
+                    <p>Email: info@aqualattice.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">System Design</a></li>
+                        <li><a href="#">Installation</a></li>
+                        <li><a href="#">Automation</a></li>
+                        <li><a href="#">Maintenance</a></li>
+                        <li><a href="#">Training</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                        <li><a href="#">CCPA Notice</a></li>
+                    </ul>
+                    <div class="footer-social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Aqualattice Irrigation. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-question i').className = 'fas fa-plus';
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                const icon = question.querySelector('i');
+                icon.className = item.classList.contains('active') ? 'fas fa-minus' : 'fas fa-plus';
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your message! We will respond as soon as possible.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>

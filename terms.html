@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Aqualattice Irrigation</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c8a6d;
+            --secondary-color: #3aa78a;
+            --accent-color: #f5a623;
+            --dark-color: #1a3a2f;
+            --light-color: #f5f7f6;
+            --text-color: #333;
+            --text-light: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('p2.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Terms Content */
+        .terms-content {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .terms-content h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 30px 0 15px;
+        }
+        
+        .terms-content h3 {
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            margin: 25px 0 10px;
+        }
+        
+        .terms-content p {
+            margin-bottom: 15px;
+        }
+        
+        .terms-content ul {
+            margin: 20px 0 20px 40px;
+        }
+        
+        .terms-content li {
+            margin-bottom: 15px;
+        }
+        
+        .point-title {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                padding: 10px 20px;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="p1.png" alt="Aqualattice Irrigation Logo">
+                <div class="logo-text">
+                    <h1>Aqualattice Irrigation</h1>
+                    <p>The framework of growth</p>
+                </div>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Terms of Service</h2>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <h2>Terms of Service for Aqualattice Irrigation</h2>
+            <p>Last Updated: June 28, 2023</p>
+            
+            <p>Welcome to Aqualattice Irrigation! These Terms of Service ("Terms") govern your access to and use of our website, products, and services ("Services"). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.</p>
+            
+            <h3>1. Acceptance of Terms</h3>
+            <p><span class="point-title">Binding Agreement:</span> These Terms constitute a legally binding agreement between you and Aqualattice Irrigation. By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree, you may not use our Services.</p>
+            
+            <p><span class="point-title">Eligibility:</span> You must be at least 18 years old to use our Services. By agreeing to these Terms, you represent that you are at least 18 and have the legal capacity to enter into contracts.</p>
+            
+            <p><span class="point-title">Modifications:</span> We reserve the right to modify these Terms at any time. We will notify you of significant changes through our website or email. Your continued use after changes constitutes acceptance of the new Terms.</p>
+            
+            <h3>2. Account Registration</h3>
+            <p><span class="point-title">Account Creation:</span> Some Services require account registration. You agree to provide accurate, current, and complete information during registration and to update it as needed. You are responsible for maintaining the confidentiality of your account credentials.</p>
+            
+            <p><span class="point-title">Account Security:</span> You are solely responsible for all activities under your account. Notify us immediately of any unauthorized use or security breaches. We are not liable for any losses resulting from unauthorized account access.</p>
+            
+            <p><span class="point-title">Account Termination:</span> We reserve the right to suspend or terminate accounts that violate these Terms or for any other reason at our sole discretion, without prior notice or liability.</p>
+            
+            <h3>3. Products and Services</h3>
+            <p><span class="point-title">Product Descriptions:</span> We strive for accuracy in product descriptions but do not warrant they are complete, reliable, current, or error-free. If a product is not as described, your sole remedy is to return it for a refund.</p>
+            
+            <p><span class="point-title">Pricing:</span> All prices are in US dollars and subject to change without notice. We reserve the right to modify or discontinue products or services at any time without notice.</p>
+            
+            <p><span class="point-title">Order Acceptance:</span> Your order constitutes an offer to purchase. We reserve the right to refuse or cancel any order for any reason, including limitations on quantities, inaccuracies, or suspected fraud.</p>
+            
+            <h3>4. Payment and Billing</h3>
+            <p><span class="point-title">Payment Methods:</span> We accept various payment methods as indicated during checkout. You represent that you have the legal right to use any payment method provided.</p>
+            
+            <p><span class="point-title">Sales Tax:</span> Where required, we will collect applicable sales tax. You are responsible for any other taxes associated with your purchase.</p>
+            
+            <p><span class="point-title">Billing Disputes:</span> You must notify us in writing within 30 days of the disputed charge. Failure to do so constitutes waiver of any claim regarding such charges.</p>
+            
+            <h3>5. Shipping and Delivery</h3>
+            <p><span class="point-title">Shipping Policies:</span> Shipping times are estimates only. We are not responsible for delays caused by carriers or events beyond our control. Risk of loss passes to you upon delivery to the carrier.</p>
+            
+            <p><span class="point-title">International Orders:</span> International customers are responsible for all customs duties, taxes, and fees. We cannot guarantee delivery to all international locations.</p>
+            
+            <p><span class="point-title">Damaged Shipments:</span> Inspect shipments immediately. Report any damage within 48 hours of delivery for replacement or refund consideration.</p>
+            
+            <h3>6. Returns and Refunds</h3>
+            <p><span class="point-title">Return Policy:</span> Most products may be returned within 30 days of delivery for a refund or exchange, subject to our Return Policy. Some items are non-returnable for hygiene or safety reasons.</p>
+            
+            <p><span class="point-title">Refund Processing:</span> Refunds will be issued to the original payment method within 14 business days of receiving the returned item. Shipping costs are non-refundable unless the return is due to our error.</p>
+            
+            <p><span class="point-title">Restocking Fees:</span> Certain items may be subject to restocking fees up to 15% of the item price. We will disclose any applicable restocking fees before processing your return.</p>
+            
+            <h3>7. Intellectual Property</h3>
+            <p><span class="point-title">Ownership:</span> All content on our website and Services, including text, graphics, logos, and software, is our property or our licensors' and protected by copyright and other intellectual property laws.</p>
+            
+            <p><span class="point-title">Limited License:</span> We grant you a limited, non-exclusive, non-transferable license to access and use our Services for personal, non-commercial purposes in accordance with these Terms.</p>
+            
+            <p><span class="point-title">Restrictions:</span> You may not modify, reproduce, distribute, create derivative works, publicly display, or commercially exploit our content without our express written permission.</p>
+            
+            <h3>8. User Content</h3>
+            <p><span class="point-title">Submissions:</span> Any content you submit (reviews, comments, etc.) grants us a perpetual, worldwide license to use, modify, and display such content in connection with our Services.</p>
+            
+            <p><span class="point-title">Responsibility:</span> You are solely responsible for your content and its accuracy. You represent that you have all rights necessary to submit the content and that it doesn't violate any laws or third-party rights.</p>
+            
+            <p><span class="point-title">Content Removal:</span> We reserve the right to remove any user content that violates these Terms or that we deem inappropriate, without notice or liability.</p>
+            
+            <h3>9. Prohibited Conduct</h3>
+            <p><span class="point-title">General Restrictions:</span> You agree not to: (a) violate any laws; (b) infringe intellectual property rights; (c) harass or harm others; (d) transmit viruses or malicious code; (e) interfere with our Services' operation; or (f) attempt unauthorized access.</p>
+            
+            <p><span class="point-title">Commercial Use:</span> You may not use our Services for commercial purposes without our express written consent. This includes reselling products, scraping data, or using our content for commercial benefit.</p>
+            
+            <p><span class="point-title">System Integrity:</span> You may not use any automated systems (robots, spiders, etc.) to access our Services, except for search engine indexing or with our prior permission.</p>
+            
+            <h3>10. Third-Party Links</h3>
+            <p><span class="point-title">External Sites:</span> Our Services may contain links to third-party websites. We do not control or endorse these sites and are not responsible for their content, products, or privacy practices.</p>
+            
+            <p><span class="point-title">Third-Party Services:</span> Any use of third-party products or services is at your own risk. We make no representations or warranties regarding third-party offerings.</p>
+            
+            <h3>11. Disclaimer of Warranties</h3>
+            <p><span class="point-title">As Is Basis:</span> Our Services are provided "as is" without warranties of any kind, either express or implied. We disclaim all warranties including merchantability, fitness for a particular purpose, and non-infringement.</p>
+            
+            <p><span class="point-title">No Guarantees:</span> We do not guarantee that our Services will be uninterrupted, secure, or error-free, or that defects will be corrected. You use our Services at your own risk.</p>
+            
+            <h3>12. Limitation of Liability</h3>
+            <p><span class="point-title">Exclusion of Damages:</span> To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues.</p>
+            
+            <p><span class="point-title">Total Liability:</span> Our total liability for any claims under these Terms shall not exceed the amount you paid us for the Services in the 12 months preceding the claim.</p>
+            
+            <h3>13. Indemnification</h3>
+            <p><span class="point-title">Your Responsibility:</span> You agree to defend, indemnify, and hold us harmless from any claims, liabilities, damages, and expenses arising from your use of our Services or violation of these Terms.</p>
+            
+            <h3>14. Termination</h3>
+            <p><span class="point-title">By You:</span> You may stop using our Services at any time. Certain provisions will survive termination, including intellectual property, disclaimers, indemnity, and limitations of liability.</p>
+            
+            <p><span class="point-title">By Us:</span> We may terminate or suspend your access immediately, without prior notice, for any reason, including if you breach these Terms.</p>
+            
+            <h3>15. Governing Law</h3>
+            <p><span class="point-title">Jurisdiction:</span> These Terms shall be governed by New York law without regard to conflict of law provisions. Any disputes shall be resolved in the state or federal courts located in New York County, New York.</p>
+            
+            <h3>16. Dispute Resolution</h3>
+            <p><span class="point-title">Negotiation:</span> Before filing any claim, you agree to attempt to resolve the dispute informally by contacting us at legal@aqualattice.com.</p>
+            
+            <p><span class="point-title">Arbitration:</span> Any disputes not resolved informally shall be resolved by binding arbitration in New York under AAA rules. Judgment may be entered in any court with jurisdiction.</p>
+            
+            <h3>17. Class Action Waiver</h3>
+            <p><span class="point-title">Individual Claims:</span> You agree to resolve disputes on an individual basis and waive any right to participate in class actions or class arbitrations.</p>
+            
+            <h3>18. Force Majeure</h3>
+            <p><span class="point-title">Unforeseen Events:</span> We are not liable for failure to perform due to events beyond our reasonable control, including natural disasters, wars, or internet outages.</p>
+            
+            <h3>19. Severability</h3>
+            <p><span class="point-title">Partial Invalidity:</span> If any provision is found invalid or unenforceable, the remaining provisions will remain in full effect, and the invalid provision will be modified to the minimum extent necessary.</p>
+            
+            <h3>20. Entire Agreement</h3>
+            <p><span class="point-title">Complete Terms:</span> These Terms constitute the entire agreement between you and Aqualattice Irrigation regarding the Services, superseding any prior agreements.</p>
+            
+            <h3>Additional Terms and Conditions</h3>
+            
+            <p><span class="point-title">21. Installation Services:</span> Our installation services are subject to separate service agreements. All installations require site evaluation and may be subject to additional terms and conditions.</p>
+            
+            <p><span class="point-title">22. Maintenance Plans:</span> Maintenance service subscriptions automatically renew unless canceled at least 30 days before the renewal date. Cancellation requests must be submitted in writing.</p>
+            
+            <p><span class="point-title">23. Product Warranties:</span> Products come with manufacturer warranties as specified in product documentation. Our liability is limited to the warranty terms provided by the manufacturer.</p>
+            
+            <p><span class="point-title">24. Software Licenses:</span> Any software provided is licensed, not sold. Your use is subject to any accompanying license agreements and these Terms.</p>
+            
+            <p><span class="point-title">25. Professional Advice:</span> Information provided through our Services is for general informational purposes only and does not constitute professional advice. Always consult qualified professionals for specific advice.</p>
+            
+            <p><span class="point-title">26. Export Controls:</span> You agree to comply with all applicable export and re-export control laws, including restrictions on destinations, end users, and end use.</p>
+            
+            <p><span class="point-title">27. Assignment:</span> You may not assign these Terms without our prior written consent. We may assign these Terms without restriction.</p>
+            
+            <p><span class="point-title">28. No Waiver:</span> Our failure to enforce any right or provision will not be considered a waiver of those rights. Any waiver must be in writing.</p>
+            
+            <p><span class="point-title">29. Electronic Communications:</span> You consent to receive communications electronically, including notices, agreements, disclosures, and other communications.</p>
+            
+            <p><span class="point-title">30. Feedback:</span> Any feedback you provide becomes our property. We may use and modify it for any purpose without compensation to you.</p>
+            
+            <p><span class="point-title">31. Age Restrictions:</span> Certain products may have age restrictions. You agree to comply with all applicable age restrictions and laws.</p>
+            
+            <p><span class="point-title">32. Product Modifications:</span> We reserve the right to modify product specifications without notice. Product images may not reflect exact appearance.</p>
+            
+            <p><span class="point-title">33. Environmental Compliance:</span> You are responsible for proper disposal of products in accordance with local environmental regulations.</p>
+            
+            <p><span class="point-title">34. Safety Information:</span> You agree to read and follow all safety information provided with products. Improper use may void warranties.</p>
+            
+            <p><span class="point-title">35. Water Usage:</span> Actual water savings may vary based on installation, maintenance, and local conditions. We do not guarantee specific water reduction amounts.</p>
+            
+            <p><span class="point-title">36. Technical Support:</span> Technical support is provided as described in your service agreement. Support may require remote access to your systems.</p>
+            
+            <p><span class="point-title">37. Training Programs:</span> Training program content may change without notice. Certifications are valid for two years unless otherwise specified.</p>
+            
+            <p><span class="point-title">38. Promotions:</span> Special offers and promotions are subject to additional terms and may be discontinued at any time without notice.</p>
+            
+            <p><span class="point-title">39. Referral Programs:</span> Referral rewards are subject to program terms and may be modified or terminated at our discretion.</p>
+            
+            <p><span class="point-title">40. Contact Information:</span> For questions about these Terms, please contact us at:</p>
+            <p>Aqualattice Irrigation<br>
+            400 Broome St, New York, NY 10013, USA<br>
+            Phone: (212) 555-1234<br>
+            Email: legal@aqualattice.com</p>
+            
+            <p>These comprehensive Terms of Service govern your relationship with Aqualattice Irrigation and your use of our Services. We encourage you to review them carefully and contact us with any questions.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Aqualattice Irrigation</h3>
+                    <p>The framework of growth for urban gardens, vertical farms, and commercial green spaces.</p>
+                    <p>400 Broome St, New York, NY 10013, USA</p>
+                    <p>Phone: (212) 555-1234</p>
+                    <p>Email: info@aqualattice.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">System Design</a></li>
+                        <li><a href="#">Installation</a></li>
+                        <li><a href="#">Automation</a></li>
+                        <li><a href="#">Maintenance</a></li>
+                        <li><a href="#">Training</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                        <li><a href="#">CCPA Notice</a></li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Aqualattice Irrigation. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
